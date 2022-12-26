@@ -1,6 +1,4 @@
-# To Android users
-To emulate termux inside termux, Use the first version of termux-proot.
-
+# Latest Termux on Legacy Termux
 (Execute this outside termux-proot environment)
 ```sh
 # Download the file of 1st version of termux-proot
@@ -15,12 +13,9 @@ chmod +x ~/termux-proot.sh
 
 ![Running a sandboxed Termux environment](https://raw.githubusercontent.com/Yonle/termux-proot/master/screenshot.png)
 
-# termux-proot
-A sandboxed, 2nd termux, isolated or jailed termux environment with proot
-
-Test something out in sandboxed environment with 0% Afraid of getting bricked in your real termux. Human is curious, Ain't we?
-
-Also support on non-Android distro, Including Debian, Alpine, and etc.
+# termux-proot-for-legacy
+A secondary environment running Latest Termux on Termux Legacy (Android 6 and below.);  This was made in order to get latest packages work on older devices since in legacy packages are now problematic and deprecated.
+**Generally its not recommended for people who don't understand true purpose of termux. I don't recommend using this unless you know specifically what you are doing.**
 
 ## Setup & Installation
 Before installing, We need these 3 packages to be installed in your Termux:
@@ -29,7 +24,7 @@ Before installing, We need these 3 packages to be installed in your Termux:
  * `unzip` for unzipping Termux Bootstrap.
  * `proot` for start sandboxed environment.
 
-These required packages should be installed in your host/system.
+These required packages should be installed.
 
 And finally, set up sandboxed environment:
 
@@ -70,9 +65,5 @@ termux-proot also has it's own environment variables and it's changeable. They a
 ## Disadvantages
  * DNS is static. Should using static resolver that located at `/etc/hosts` or `/system/etc/hosts`. You may need to `echo unresolved-domain.com >> /system/etc/static-dns-hosts.txt` and run `/system/bin/update-static-dns` to get your `unresolved-domain.com` work.
  * Some certain thing is not available (like OpenSLES, dalvikvm, and etc).
- * ARM variant may require a custom seccomp profile to remove restrictions from personality() system call. Whereas Docker Hub contains prebuilt ARM image, it is outdated and won't receive updates anymore.
-
-## Community
-- [Telegram group](https://t.me/yonlecoder)
-- [Discord Server](https://discord.gg/yqB5HF8XFu)
-- [#yonle](irc://irc.libera.chat:6697/yonle) on [libera.chat](https://libera.chat)
+## 
+Credits to Yonle for original code [here](https://github.com/Yonle/termux-proot)
